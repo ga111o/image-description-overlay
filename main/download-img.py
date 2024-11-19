@@ -1,12 +1,8 @@
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.common.by import By
-import requests
 import os
 import sys
 import json
-from urllib.parse import urlparse, unquote
-import base64
-from PIL import Image, UnidentifiedImageError
 import DEBUG
 import sqlite3
 import hashlib

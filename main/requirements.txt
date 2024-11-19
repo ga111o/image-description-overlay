@@ -1,0 +1,9 @@
+Pillow
+langchain
+langchain-community
+langchain-openai
+selenium
+openai
+torch
+transformers
+langchain-core

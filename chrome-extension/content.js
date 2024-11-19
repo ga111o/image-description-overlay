@@ -96,6 +96,12 @@ async function updateImageAltText() {
         overlay.style.textAlign = "center";
         overlay.style.boxSizing = "border-box";
       }
+
+      const parent = img.parentElement;
+      if (parent && parent.style.position !== "relative") {
+        parent.style.position = "relative";
+      }
+      parent.appendChild(overlay);
     }
   });
 }

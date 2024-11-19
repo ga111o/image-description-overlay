@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>대체텍스트 생성기 옵션</title>
+    <title>image description overlay options</title>
     <style>
       body {
         margin: 20px;
@@ -16,22 +16,22 @@
 
       input[type="text"] {
         font-size: 15px;
-        border-radius: 15px;
+        border-radius: 7px;
         height: 30px;
         border: none;
         margin-top: 5px;
-        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.9);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
         padding: 5px;
         padding-left: 10px;
         transition: 0.3s;
         margin-right: 10px;
       }
       input[type="text"]:hover {
-        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.65);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
         transition: 0.3s;
       }
       input[type="text"]:focus {
-        box-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         transition: 0.3s;
         outline: none;
         border-radius: 5px;
@@ -41,26 +41,28 @@
         padding: 10px 20px;
         border: none;
         cursor: pointer;
-        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.9);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
         transition: 0.2s;
         height: 30px;
-        border-radius: 15px;
+        border-radius: 7px;
         background-color: white;
       }
 
       button:hover {
-        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.65);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
         transition: 0.2s;
         border-radius: 5px;
       }
-
+      label {
+        white-space: nowrap;
+      }
       select {
         height: 40px;
         font-size: 15px;
-        border-radius: 15px;
+        border-radius: 7px;
         border: none;
         margin-top: 5px;
-        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.9);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
         padding: 5px;
         padding-left: 10px;
         transition: 0.3s;
@@ -68,22 +70,20 @@
         margin-right: 30px;
       }
       select:hover {
-        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.65);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
         transition: 0.3s;
       }
       select:focus {
         border-radius: 5px;
-        box-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
       }
       .box {
         columns: row;
         display: flex;
         align-items: center;
-        padding-bottom: 35px;
         padding-top: 28px;
         margin-bottom: 10px;
-        padding-left: 10px;
-        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+        padding: 0 10px;
         border-radius: 10px;
       }
       hr {
@@ -94,21 +94,22 @@
         margin-right: 10px;
       }
       #save {
-        height: 50px;
+        height: 40px;
         margin-top: 20px;
         width: 100px;
+        float: inline-end;
+        margin-bottom: 20px;
       }
     </style>
   </head>
   <body>
-    <h1>대체텍스트 생성기 옵션</h1>
     <div class="box">
-      <label for="server">서버:</label>
+      <label for="server">server:</label>
       <input type="text" id="server" name="server" />
     </div>
 
     <div class="box">
-      <label for="server">언어 선택:</label>
+      <label for="server">language:</label>
       <select id="language">
         <option value="English">English</option>
         <option value="Korean">한국어</option>
@@ -119,12 +120,12 @@
     </div>
 
     <div class="box">
-      <label for="model">모델 선택: </label>
+      <label for="model">model:</label>
       <select id="model">
-        <option value="caption">캡션 모델만 사용</option>
-        <option value="llm">캡션 모델과 llm 사용</option>
-        <option value="lmm">lmm 사용</option>
-        <option value="object">객체만 감지</option>
+        <option value="caption">caption model only</option>
+        <option value="llm">caption model -> llm</option>
+        <option value="lmm">lmm</option>
+        <option value="object">object detection only</option>
       </select>
     </div>
 
@@ -135,7 +136,7 @@
     </div>
 
     <div class="box">
-      <label for="apiKey">font-size</label>
+      <label for="apiKey">font-size:</label>
       <input type="text" id="fontSize" name="fontSize" />
     </div>
 
