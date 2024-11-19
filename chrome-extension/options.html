@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>대체텍스트 생성기 옵션</title>
+    <style>
+      body {
+        margin: 20px;
+      }
+
+      label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+
+      input[type="text"] {
+        font-size: 15px;
+        border-radius: 15px;
+        height: 30px;
+        border: none;
+        margin-top: 5px;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.9);
+        padding: 5px;
+        padding-left: 10px;
+        transition: 0.3s;
+        margin-right: 10px;
+      }
+      input[type="text"]:hover {
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.65);
+        transition: 0.3s;
+      }
+      input[type="text"]:focus {
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+        transition: 0.3s;
+        outline: none;
+        border-radius: 5px;
+      }
+
+      button {
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.9);
+        transition: 0.2s;
+        height: 30px;
+        border-radius: 15px;
+        background-color: white;
+      }
+
+      button:hover {
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.65);
+        transition: 0.2s;
+        border-radius: 5px;
+      }
+
+      select {
+        height: 40px;
+        font-size: 15px;
+        border-radius: 15px;
+        border: none;
+        margin-top: 5px;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.9);
+        padding: 5px;
+        padding-left: 10px;
+        transition: 0.3s;
+        background-color: white;
+        margin-right: 30px;
+      }
+      select:hover {
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.65);
+        transition: 0.3s;
+      }
+      select:focus {
+        border-radius: 5px;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+      }
+      .box {
+        columns: row;
+        display: flex;
+        align-items: center;
+        padding-bottom: 35px;
+        padding-top: 28px;
+        margin-bottom: 10px;
+        padding-left: 10px;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+      }
+      hr {
+        color: rgba(0, 0, 0, 0.65);
+      }
+      label {
+        font-size: 18px;
+        margin-right: 10px;
+      }
+      #save {
+        height: 50px;
+        margin-top: 20px;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>대체텍스트 생성기 옵션</h1>
+    <div class="box">
+      <label for="server">서버:</label>
+      <input type="text" id="server" name="server" />
+    </div>
+
+    <div class="box">
+      <label for="server">언어 선택:</label>
+      <select id="language">
+        <option value="English">English</option>
+        <option value="Korean">한국어</option>
+        <option value="Japanese">日本語</option>
+        <option value="Chinese">中文</option>
+        <option value="Spanish">Español</option>
+      </select>
+    </div>
+
+    <div class="box">
+      <label for="model">모델 선택: </label>
+      <select id="model">
+        <option value="caption">캡션 모델만 사용</option>
+        <option value="llm">캡션 모델과 llm 사용</option>
+        <option value="lmm">lmm 사용</option>
+        <option value="object">객체만 감지</option>
+      </select>
+    </div>
+
+    <div class="box">
+      <label for="apiKey">openai api-key:</label>
+      <input type="text" id="apiKey" name="apiKey" />
+      <p id="apiKeyStatus"></p>
+    </div>
+
+    <div class="box">
+      <label for="apiKey">font-size</label>
+      <input type="text" id="fontSize" name="fontSize" />
+    </div>
+
+    <div class="box">
+      <label for="debugMode">debug mode:</label>
+      <input type="checkbox" id="debugMode" name="debugMode" />
+    </div>
+
+    <div id="saveMessage" style="display: none">
+      <p>saved!</p>
+    </div>
+
+    <button id="save">save</button>
+
+    <script src="options.js"></script>
+  </body>
+</html>
