@@ -1,5 +1,4 @@
 from tools import ImageCaptionTool
-from tools import ImageCaptionTool
 from PIL import Image
 import os
 import json

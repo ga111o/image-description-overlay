@@ -80,9 +80,9 @@ async function updateImageAltText() {
         overlay.className = "image-overlay";
         overlay.innerText = img.alt;
 
-        const fontSize = document.getElementById("fontSize").value || "12px";
-        overlay.style.fontSize = fontSize;
-
+        // const fontSize = document.getElementById("fontSize").value || "12px";
+        // console.log(fontSize);
+        // overlay.style.fontSize = fontSize;
         overlay.style.position = "absolute";
         overlay.style.top = "0";
         overlay.style.left = "0";
@@ -95,13 +95,14 @@ async function updateImageAltText() {
         overlay.style.width = `${img.clientWidth}px`;
         overlay.style.textAlign = "center";
         overlay.style.boxSizing = "border-box";
-      }
+        overlay.style.fontSize = "13px";
 
-      const parent = img.parentElement;
-      if (parent && parent.style.position !== "relative") {
-        parent.style.position = "relative";
+        const parent = img.parentElement;
+        if (parent && parent.style.position !== "relative") {
+          parent.style.position = "relative";
+        }
+        parent.appendChild(overlay);
       }
-      parent.appendChild(overlay);
     }
   });
 }
