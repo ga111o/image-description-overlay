@@ -1,0 +1,81 @@
+.noimage::before,.subscriptionlist .s_refreshbutton::before,.subscriptionlist .s_desc_button::after{background-image:url(https://ssl.pstatic.net/static.news/image/news/m/2023/01/12/sp_aside.png);background-size:62px 51px;background-repeat:no-repeat}
+html{font-size:10px;line-height:10px}
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,figure{margin:0;padding:0}
+body,input,textarea,select,button,table{font-size:14px;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Apple SD Gothic Neo",Arial,sans-serif;line-height:1.25em}
+img,fieldset{border:0}
+img{vertical-align:top}
+ul,ol{list-style:none}
+em,address{font-style:normal}
+a{color:inherit;text-decoration:none}
+button{color:inherit;cursor:pointer;border-radius:0;background:0}
+button[disabled='disabled'],button:disabled{cursor:default}
+.u_vc,.u_hc,.u_skip,.newsct_body caption,.blind{position:absolute;overflow:hidden;clip:rect(0 0 0 0);width:1px;height:1px;margin:-1px}
+.news_common_aside{padding-bottom:30px}
+.is_hidden{display:none!important}
+.noimage_wrap{display:inline-block;vertical-align:top;position:relative;max-width:100%;width:100%;height:100%;-webkit-box-sizing:border-box;box-sizing:border-box;border-radius:inherit}
+.noimage{position:absolute;top:0;left:0;right:0;bottom:0;background-color:#f2f4f9;border-radius:inherit}
+@media(prefers-color-scheme:dark){html.DARK_THEME .noimage{background-color:#303033}
+}
+.noimage::before{position:absolute;top:0;left:0;right:0;bottom:0;width:22px;height:20px;background-position:-24px 0;margin:auto;content:''}
+@media(prefers-color-scheme:dark){html.DARK_THEME .noimage::before{background-position:0 0}
+}
+.subscriptionlist .noimage::before{width:10px;height:10px;background-position:0 -41px}
+@media(prefers-color-scheme:dark){html.DARK_THEME .subscriptionlist .noimage::before{background-position:-35px -22px}
+}
+.qrcodelist .noimage{background-color:rgba(218,223,235,0.25)}
+.qrcodelist .noimage::before{opacity:.9}
+@media(prefers-color-scheme:dark){html.DARK_THEME .qrcodelist .noimage{background-color:rgba(48,48,51,0.25)}
+}
+.subscriptionlist{border-radius:7px;-webkit-box-shadow:0 2px 4px 0 rgba(0,0,0,0.05);box-shadow:0 2px 4px 0 rgba(0,0,0,0.05);border:solid 1px rgba(0,0,0,0.1);font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Apple SD Gothic Neo",Arial,sans-serif;font-size:12px;font-style:normal;font-weight:normal;line-height:22px;letter-spacing:-0.3px;color:#666;background-color:#fff}
+@media(prefers-color-scheme:dark){html.DARK_THEME .subscriptionlist{background-color:#39393c}
+}
+.subscriptionlist+.subscriptionlist{margin-top:10px}
+.subscriptionlist .s_wrap{padding:20px 12px 9px 18px}
+html[data-useragent*='Windows'] .subscriptionlist .s_wrap{padding-left:15px}
+.subscriptionlist .s_wrap+.s_wrap{position:relative;border-top:1px solid #eaeaea;padding-top:16px}
+@media(prefers-color-scheme:dark){html.DARK_THEME .subscriptionlist .s_wrap+.s_wrap{border-color:#464649}
+}
+.subscriptionlist .s_title{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;line-height:17px}
+.subscriptionlist .s_title_link{display:block;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-negative:1;flex-shrink:1}
+.subscriptionlist .s_h{display:inline;vertical-align:top;line-height:16px;font-size:13px;font-weight:bold;letter-spacing:-1px;color:#222}
+@media(prefers-color-scheme:dark){html.DARK_THEME .subscriptionlist .s_h{color:#f0f0f2}
+}
+html[data-useragent*='Windows NT'] .subscriptionlist .s_h{letter-spacing:-1.5px}
+.subscriptionlist .s_count{color:#4978f4;display:inline;vertical-align:top;line-height:16px;font-size:13px;font-weight:600;letter-spacing:-1px}
+.subscriptionlist .s_refreshbutton{font-size:1px;line-height:initial;color:rgba(1,0,0,0);width:17px;height:17px;overflow:hidden;border:0;background:0;-webkit-box-sizing:content-box;box-sizing:content-box;padding:7px;margin:-7px}
+.subscriptionlist .s_refreshbutton::before{width:17px;height:17px;background-position:0 -22px;display:inline-block;vertical-align:top;content:''}
+.subscriptionlist .s_desc{position:relative}
+.subscriptionlist .s_desc_button{line-height:13px;font-size:11px;font-weight:500;letter-spacing:-0.3px;color:#8f8f8f;border:0;background:0;padding:8px 0 1px}
+@media(prefers-color-scheme:dark){html.DARK_THEME .subscriptionlist .s_desc_button{color:#a5a5a7}
+}
+.subscriptionlist .s_desc_button::after{width:12px;height:12px;background-position:-48px -16px;display:inline-block;vertical-align:top;margin:1px 0 0 4px;content:''}
+@media(prefers-color-scheme:dark){html.DARK_THEME .subscriptionlist .s_desc_button::after{-webkit-filter:invert(0.8);filter:invert(0.8)}
+}
+.subscriptionlist .s_desc_layer{position:absolute;top:24px;right:-5px;left:-11px;-webkit-box-sizing:border-box;box-sizing:border-box;z-index:1000;padding:14px 26px 12px 15px;border-radius:5px;-webkit-box-shadow:0 1px 5px 0 rgba(0,0,0,0.05);box-shadow:0 1px 5px 0 rgba(0,0,0,0.05);border:solid 1px #e9e9e9;background-color:#fff}
+@media(prefers-color-scheme:dark){html.DARK_THEME .subscriptionlist .s_desc_layer{border-color:#545457;background-color:#48484b}
+}
+html[data-useragent*='Windows NT'] .subscriptionlist .s_desc_layer{left:-8px}
+.subscriptionlist .s_desc_p{overflow-wrap:break-word;font-size:12px;line-height:16px;letter-spacing:-0.3px;color:#666}
+@media(prefers-color-scheme:dark){html.DARK_THEME .subscriptionlist .s_desc_p{color:#919192}
+}
+.subscriptionlist .s_desc_close{font-size:1px;line-height:initial;color:rgba(1,0,0,0);position:absolute;width:12px;height:12px;-webkit-box-sizing:content-box;box-sizing:content-box;top:0;right:0;overflow:hidden;padding:10px;box-sizing:content-box;border:0}
+.subscriptionlist .s_desc_close::before{content:'';display:block;width:1px;height:16.968px;position:absolute;top:50%;left:50%;margin-top:-8.484px;margin-left:-0.5px;background-color:#666;-webkit-transform:rotate(45deg);transform:rotate(45deg);content:''}
+.subscriptionlist .s_desc_close::after{content:'';display:block;width:1px;height:16.968px;position:absolute;top:50%;left:50%;margin-top:-8.484px;margin-left:-0.5px;background-color:#666;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);content:''}
+.subscriptionlist .s_list{padding-top:3px}
+.subscriptionlist .s_item_a{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.subscriptionlist .s_item_thumb{position:relative;-webkit-box-flex:0;-ms-flex-positive:0;flex-grow:0;-ms-flex-negative:0;flex-shrink:0;width:18px;height:18px;margin-right:6px;border-radius:50%}
+.subscriptionlist .s_item_thumb::after{position:absolute;top:0;left:0;right:0;bottom:0;border-radius:inherit;border:1px solid rgba(0,0,0,0.05);content:''}
+.subscriptionlist .s_item_img{width:100%;height:auto;vertical-align:top;-o-object-fit:cover;object-fit:cover;border-radius:inherit}
+.subscriptionlist .s_item_text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:31px;font-size:12px;font-weight:500;letter-spacing:-0.3px;color:#303038}
+@media(prefers-color-scheme:dark){html.DARK_THEME .subscriptionlist .s_item_text{color:#dadde0}
+}
+.subscriptionlist .s_settingbutton{width:100%;display:block;padding:14px 18px;line-height:16px;font-size:13px;letter-spacing:-0.3px;color:#222;text-align:left;border:1px solid #eaeaea;border-width:1px 0 0;background:0;-webkit-box-sizing:border-box;box-sizing:border-box}
+@media(prefers-color-scheme:dark){html.DARK_THEME .subscriptionlist .s_settingbutton{color:#f0f0f2;border-top-color:#464649}
+}
+.subscriptionlist .s_settingbutton::after{display:inline-block;vertical-align:top;width:5.65771px;height:5.65771px;border:1px solid #666;border-width:1px 1px 0 0;border-radius:1px;margin:5px 0 0 3px;-webkit-transform:rotate(45deg);transform:rotate(45deg);content:''}
+@media(prefers-color-scheme:dark){html.DARK_THEME .subscriptionlist .s_settingbutton::after{border-color:#a5a5a7}
+}
+.subscriptionlist .s_error{display:block;line-height:16px;padding:9px 0 7px;font-size:12px;font-weight:normal;letter-spacing:-0.3px;color:#666;word-break:keep-all}
+@media(prefers-color-scheme:dark){html.DARK_THEME .subscriptionlist .s_error{color:#919192}
+}
+.subscriptionlist a.s_error::after{display:inline-block;vertical-align:top;width:5.65771px;height:5.65771px;border:1px solid #8f8f8f;border-width:1px 1px 0 0;border-radius:1px;margin:5.17115px 0 0 1px;-webkit-transform:rotate(45deg);transform:rotate(45deg);content:''}
