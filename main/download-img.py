@@ -6,11 +6,11 @@ import json
 import DEBUG
 import sqlite3
 import hashlib
-from selenium.webdriver.firefox.service import Service
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 import time
+from urllib.parse import urljoin, urlparse
 
 DRIVER_PATH = "./gecko/geckodriver"
 
@@ -123,14 +123,36 @@ def get_image_hash(image_path):
 response_data = {}
 
 try:
-    driver.get(url)
+    # Handle local files
+    if url.startswith('file://'):
+        url_path = url[7:]  # Remove 'file://' prefix
+        if os.path.exists(url_path):
+            driver.get(url)
+        else:
+            raise FileNotFoundError(f"Local file not found: {url_path}")
+    else:
+        driver.get(url)
+
     images = driver.find_elements(By.TAG_NAME, 'img')
 
     for img_element in images:
         try:
             src = img_element.get_attribute("src")
-            alt_text = img_element.get_attribute('alt')
+            if not src:
+                continue
 
+            # Handle relative paths for local files
+            if url.startswith('file://'):
+                if src.startswith('file://'):
+                    src_path = src[7:]
+                else:
+                    base_path = os.path.dirname(url[7:])
+                    src_path = os.path.join(base_path, src)
+                    src = 'file://' + os.path.abspath(src_path)
+
+            # Remove URL parameters after file extension
+            src = src.split('?')[0]
+            alt_text = img_element.get_attribute('alt')
             img_extension = os.path.splitext(os.path.basename(src))[1]
             image_full_path = os.path.join(img_folder, os.path.basename(src))
             image_original_name = f"{os.path.splitext(os.path.basename(src))[0]}{
@@ -138,19 +160,16 @@ try:
 
             driver.execute_script(f"var xhr = new XMLHttpRequest(); xhr.open('GET', '{src}', true); xhr.responseType = 'blob'; xhr.onload = function(e) {{ if (this.status == 200) {{ var blob = this.response; var img = document.createElement('img'); img.src = window.URL.createObjectURL(blob); document.body.appendChild(img); var a = document.createElement('a'); a.href = img.src; a.download = '{
                                   image_original_name}'; document.body.appendChild(a); a.click(); }} }}; xhr.send();")
-
             relative_path = os.path.relpath(
-                image_full_path, "/home/ga111o/document/MarkDown/kwu-idea-lab/projects/add-alt-using-llm/main")
+                image_full_path, "/Users/ga111o/Documents/dev/kwu-hci-context-based-image-caption/main")
 
             image_file = os.path.abspath(os.path.join(".", relative_path))
-
             time.sleep(0.3)
 
             img_hash = get_image_hash(image_full_path)
 
             parent_element = img_element.find_element(By.XPATH, '..')
             context = extract_context(img_element)
-
             response_data[image_original_name] = {
                 "image_path": image_file,
                 "context": context,
@@ -164,7 +183,6 @@ try:
             cursor.execute(
                 "SELECT COUNT(*) FROM images WHERE hash = ?", (img_hash,))
             exists = cursor.fetchone()[0]
-
             if exists == 0:
                 cursor.execute("""
                     INSERT INTO images (image_name, original_url, img_path, context, language, title, hash, original_alt)

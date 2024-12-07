@@ -94,7 +94,7 @@ def invoke_agent(language, title, context, url):
     #     "Korean": f"'주어진 이미지에 맞는 alt text를 작성하세요. alt text 외의 내용은 포함하면 안됩니다. 당신의 최종 설명은 {language}으로 해야 합니다.",
     # }
     translations = {
-        "Korean": f"'{title}' 웹사이트의 이미지입니다. 해당 이미지는 '{context}'와 관련이 되어있습니다. 이에 맞는 한 줄의 alt text를 작성하세요. alt text 외의 내용은 포함하면 안됩니다. 당신의 최종 설명은 {language}으로 해야 합니다.",
+        "Korean": f"해당 이미지의 alt text를 작성하세요. alt text 이외의 내용은 포함하면 안됩니다. 최소 한 줄, 최대 두 줄의 한국어로 작성하세요.",
     }
     print("context:", context)
     # translations = {

@@ -143,9 +143,9 @@ async def get_url_n_img():
 
     if model == "caption":
         if DEBUG.PRINT_LOG_BOOLEN:
-            print(f" | {session} | call generate-alt-only-caption-model.py")
+            print(f" | {session} | call generate-alt-lmm-no-context.py")
         subprocess.call(
-            ["python", "generate-alt-only-caption-model.py", session])
+            ["python", "generate-alt-lmm-no-context.py", session])
         if DEBUG.PRINT_LOG_BOOLEN:
             print(f" | {session} | done generate-alt-only-caption-model.py\n")
     elif model == "llm":
