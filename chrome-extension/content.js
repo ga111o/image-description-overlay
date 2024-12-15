@@ -51,11 +51,18 @@ async function updateImageAltText() {
     if (debugMode) console.error("failed to fetch alt texts");
     return;
   }
+  console.log(`fetch..... ${server}/${session}/output`);
 
   const altTexts = await response.json();
 
+  console.log("altTexts", altTexts);
+
   document.querySelectorAll("img").forEach((img) => {
-    const imageName = img.src.split("/").pop();
+    const url = new URL(img.src);
+    const imageName = url.pathname.split("/").pop();
+
+    if (debugMode) console.log("Processing image:", img.src, "->", imageName);
+
     if (altTexts[imageName]) {
       img.alt =
         altTexts[imageName]["response"]["output"] ||
@@ -74,33 +81,37 @@ async function updateImageAltText() {
         altTexts[imageName]["response"]["output"]
       );
 
+      // Set image height to 100%
+      // img.style.height = "100%";
+
+      // Set parent element dimensions
+      const parent = img.parentElement;
+      // if (parent) {
+      //   parent.style.width = "220px";
+      //   parent.style.height = "150px";
+      //   parent.style.position = "relative";
+      // }
+
       let overlay = img.parentElement.querySelector(".image-overlay");
       if (!overlay) {
         overlay = document.createElement("div");
         overlay.className = "image-overlay";
         overlay.innerText = img.alt;
 
-        // const fontSize = document.getElementById("fontSize").value || "12px";
-        // console.log(fontSize);
-        // overlay.style.fontSize = fontSize;
         overlay.style.position = "absolute";
         overlay.style.top = "0";
         overlay.style.left = "0";
         overlay.style.color = "white";
         overlay.style.backgroundColor = "rgba(0, 0, 0, 0.65)";
-        overlay.style.backdropFilter = "blur(3px)";
-        overlay.style.padding = "5px";
+        overlay.style.backdropFilter = "blur(1px)";
+        overlay.style.padding = "2px";
         overlay.style.pointerEvents = "none";
         overlay.style.zIndex = "1000";
         overlay.style.width = `${img.clientWidth}px`;
         overlay.style.textAlign = "center";
         overlay.style.boxSizing = "border-box";
-        overlay.style.fontSize = "13px";
+        overlay.style.fontSize = "14px";
 
-        const parent = img.parentElement;
-        if (parent && parent.style.position !== "relative") {
-          parent.style.position = "relative";
-        }
         parent.appendChild(overlay);
       }
     }
